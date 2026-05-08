@@ -1,6 +1,13 @@
 
-  
-// Select campaign based on whether this is a VIP page or not  
+
+
+const EMAIL_OVERSIGHT_VALIDATE_URL = 'https://app-cms-api-proxy-prod-001.azurewebsites.net/integration/email-oversight/validate-public';
+
+
+
+
+
+// Select campaign based on whether this is a VIP page or not
 const getVrioCampaignInfoBasedOnPaymentMethod = (isVipUpsell) => {
     const vrioCampaigns = [{"_id":"698fa8545dfb37cbef914886","integration":[{"_id":"68de8b4ba7998abc5f77b02a","workspace":"develop","platform":"vrio","description":"production","fields":{"publicApiKey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6ImFkbWluIiwib3JnYW5pemF0aW9uIjoibXZtdC52cmlvIiwiaWQiOiJhZTE4OGY0ZC0yMDAwLTQ4ZWItOGE4YS03OGY1ZjBiMWQxZGMiLCJpYXQiOjE3NTU3MjQ1OTIsImF1ZCI6InVybjp2cmlvOmFwaTp1c2VyIiwiaXNzIjoidXJuOnZyaW86YXBpOmF1dGhlbnRpY2F0b3IiLCJzdWIiOiJ1cm46dnJpbzphcGk6MjIifQ.51xFtExTqVm3o2mhizx3VsiSTv7pNAB6beF1rmV_-Jg","internalApiKey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6ImFkbWluIiwib3JnYW5pemF0aW9uIjoibXZtdC52cmlvIiwiaWQiOiJhZTE4OGY0ZC0yMDAwLTQ4ZWItOGE4YS03OGY1ZjBiMWQxZGMiLCJpYXQiOjE3NTU3MjQ1OTIsImF1ZCI6InVybjp2cmlvOmFwaTp1c2VyIiwiaXNzIjoidXJuOnZyaW86YXBpOmF1dGhlbnRpY2F0b3IiLCJzdWIiOiJ1cm46dnJpbzphcGk6MjIifQ.51xFtExTqVm3o2mhizx3VsiSTv7pNAB6beF1rmV_-Jg"},"status":"active","createdAt":1758437407128,"updatedAt":1759415115447,"__v":0,"category":"CRM","id":"68de8b4ba7998abc5f77b02a"}],"externalId":"246","name":"Melo Slim - Network - (1)","currency":"USD","countries":[223,38],"metadata":{"campaign_id":246,"campaign_name":"","payment_type_id":1,"campaign_active":true,"campaign_prepaid":true,"campaign_payment_method_required":true,"campaign_group_transactions":true,"campaign_global_js":"","campaign_global_seo_title":"","campaign_global_seo_keywords":"","campaign_global_seo_description":"","date_created":"2026-02-13 22:40:21","created_by":0,"date_modified":"2026-02-13 22:40:21","modified_by":0,"campaign_notes":"","offers":[],"shipping_profiles":[],"campaignId":"246","externalId":246,"description":"","payment_methods":["amex","discover","visa","master"],"alternative_payments":[],"countries":[{"iso_numeric":840,"calling_code":"1","id":223,"name":"United States of America","iso_2":"US","iso_3":"USA"},{"iso_numeric":124,"calling_code":"1","id":38,"name":"Canada","iso_2":"CA","iso_3":"CAN"}]},"funnels":[],"createdAt":1770900450405,"updatedAt":1771022421200,"packages":[],"status":"active","platform":"vrio","__v":0,"id":"698fa8545dfb37cbef914886"}];
 
@@ -295,7 +302,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const endpoint =
     `orders?order_id=${orderids.join(",")}` +
-    `&with=order_offers,customer_address_billing,customer_address_shipping,customer,transactions,cart&pageId=V5HXbnbCLf3QqQr8VuYnLgLnX3vOxXykvo8JtJoWqTjP43_L86lRMn7HRsv3hYDt`
+    `&with=order_offers,customer_address_billing,customer_address_shipping,customer,transactions,cart&pageId=4_OgAWNseDrFC6aD8empQw7Ql93PAo7ZxWaPSdSXu-ytAL6VIwLHVkS97AQ9ngvg`
 
   const response = await fetch(
     `https://app-cms-api-proxy-prod-001.azurewebsites.net/vrio/${endpoint}`,

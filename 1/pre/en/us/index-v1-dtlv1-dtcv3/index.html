@@ -77,7 +77,7 @@ if (localStorage.getItem('sK_r')) {
 const route = async () => {
   if (localStorage.getItem('sK_r')) return JSON.parse(localStorage.getItem('sK_r'));
   const sessionId = MVMT.getSessionId() || localStorage.getItem("mvmt_session_id") || "";
-  const url = 'https://func-ab-test-events-prod-001.azurewebsites.net/api/checkRoute?id=698fa8d95dfb37cbef9148a5&v=177782505936299&sessionId='+sessionId;
+  const url = 'https://func-ab-test-events-prod-001.azurewebsites.net/api/checkRoute?id=698fa8d95dfb37cbef9148a5&v=177824606715229&sessionId='+sessionId;
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error('Network response was not ok');
@@ -227,11 +227,11 @@ document.addEventListener("DOMContentLoaded", async() => {
   
   </script>
 <script>
-  const offerName = ', Melo Slim, Melo Slim';
+  const offerName = 'Melo Slim, Melo Slim';
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     'event': 'pageView', 
-    'offer': ', Melo Slim, Melo Slim',
+    'offer': 'Melo Slim, Melo Slim',
     'customer_id':sessionStorage.getItem("customerId") || undefined,
     'page':{
       'type':'Presell',
